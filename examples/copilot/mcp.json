@@ -1,0 +1,12 @@
+{
+  "servers": {
+    "playwright-fixer": {
+      "type": "stdio",
+      "command": "/Users/ramkumars/AI/QA_playwrightMCP/.venv/bin/playwright-fixer",
+      "args": [],
+      "env": {
+        "PW_PROJECT_DIR": "/Users/ramkumars/AI/playwright-pom-saucedemo-com"
+      }
+    }
+  }
+}

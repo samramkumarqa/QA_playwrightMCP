@@ -6,8 +6,8 @@ failing lines, the page-object locators and a **snapshot of the page at the mome
 the live page to see the **real locators**, and **proposes a fix as a diff**. Nothing is written until
 **you approve it**; then the change lands in your JavaScript files and the test is re-run.
 
-Works with any MCP-capable AI plugin (Continue, GitHub Copilot, Claude Code, JetBrains AI Assistant)
-and any model; set up here with the free **Continue** plugin and **Groq**.
+Works with any MCP-capable AI plugin (GitHub Copilot, Claude Code, JetBrains AI Assistant, DevoxxGenie)
+and any model; set up here with **GitHub Copilot** in a JetBrains IDE.
 
 > Part 3 of a QA AI toolkit:
 > [AI Test Case Generator](https://github.com/samramkumarqa/GenerativeAI) (requirements → test cases) ·
@@ -52,12 +52,12 @@ AI:   → apply_fix("3f9a1c2e")  → run_tests(grep="TC-004")   1 passed ✅
    hasn't changed since (so it never overwrites your own edits). Every apply is backed up and undoable.
 2. The server instructions tell the model to call `apply_fix` only after you say yes to that fix id.
 3. `apply_fix` and `undo_fix` are marked *destructive*, so IDE plugins ask before running them (keep
-   them on **Ask First** in Continue).
+   auto-approve off in Copilot so you confirm each tool call).
 
 Credentials stay on your machine: the AI can't read `.env`, and `inspect_page` logs in inside a local
 browser process.
 
-## Setup (macOS) with IntelliJ + Continue + Groq
+## Setup (macOS) with IntelliJ / PyCharm + GitHub Copilot
 
 **1. Install the server** (Python 3.10+):
 ```bash
@@ -75,19 +75,19 @@ npx playwright install chromium
 cp .env.example .env      # then fill in BASE_URL, APP_USERNAME, APP_PASSWORD
 ```
 
-**3. Install Continue in IntelliJ:** Settings → Plugins → Marketplace → **Continue** → Install → restart.
+**3. Install GitHub Copilot:** Settings → Plugins → Marketplace → **GitHub Copilot** → Install →
+restart, then sign in with your GitHub account (Copilot icon in the toolbar).
 
-**4. Configure Continue:** copy [`examples/continue/config.yaml`](examples/continue/config.yaml) to
-`~/.continue/config.yaml`, adjust the two paths, and put your Groq key in `~/.continue/.env`:
-```
-GROQ_API_KEY=gsk_...
-```
+**4. Add the server:** Settings → Tools → **GitHub Copilot** → **Model Context Protocol (MCP)** →
+**Configure**. This opens `mcp.json`: paste [`examples/copilot/mcp.json`](examples/copilot/mcp.json)
+with your two paths, and save. The server shows up with its 10 tools.
 
-**5. Use it:** open the Continue panel, switch the mode to **Agent** (MCP tools only work in Agent
-mode), and ask *"Run the tests and fix the failing ones"*, or type `/fix_failing_test`.
+**5. Use it:** open Copilot Chat, switch the mode to **Agent**, and ask *"Run the tests and fix the
+failing ones"*. Copilot asks before each tool call; approve `apply_fix` only for a diff you agree with.
 
 ### Other AI plugins
-The server is a standard stdio MCP server, so the same command works in any client:
+The server is a standard stdio MCP server, so the same command works in any client
+(some use `mcpServers` as the top-level key instead of `servers`):
 
 ```json
 { "mcpServers": { "playwright-fixer": {
@@ -95,7 +95,7 @@ The server is a standard stdio MCP server, so the same command works in any clie
     "env": { "PW_PROJECT_DIR": "/Users/you/AI/playwright-pom-saucedemo-com" } } } }
 ```
 - **Claude Code** (JetBrains plugin / terminal): `claude mcp add playwright-fixer -e PW_PROJECT_DIR=$PWD -- ~/AI/QA_playwrightMCP/.venv/bin/playwright-fixer`
-- **GitHub Copilot** (agent mode) and **JetBrains AI Assistant**: add the JSON above in their MCP settings.
+- **JetBrains AI Assistant** and **DevoxxGenie** (works with a Groq key): add the JSON above in their MCP settings.
 
 Every tool also takes an optional `project_dir`, so one server can work on several projects.
 
