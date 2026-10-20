@@ -1,0 +1,21 @@
+# ~/.continue/config.yaml  (Continue plugin for IntelliJ / VS Code)
+# Put your Groq key in ~/.continue/.env as:  GROQ_API_KEY=gsk_...
+name: QA Assistant
+version: 1.0.0
+schema: v1
+
+models:
+  - name: GPT-OSS 120B (Groq)
+    provider: groq
+    model: openai/gpt-oss-120b
+    apiKey: ${{ secrets.GROQ_API_KEY }}
+    roles: [chat, edit, apply]
+    capabilities: [tool_use]
+
+mcpServers:
+  - name: playwright-fixer
+    # The Python inside this project's virtual environment (absolute path).
+    command: /Users/ramkumars/AI/QA_playwrightMCP/.venv/bin/playwright-fixer
+    env:
+      # The Playwright project the AI should work on (absolute path).
+      PW_PROJECT_DIR: /Users/ramkumars/AI/playwright-pom-saucedemo-com

@@ -1,0 +1,26 @@
+[project]
+name = "playwright-fixer-mcp"
+version = "1.0.0"
+description = "MCP server that lets the AI in your IDE run, diagnose and fix Playwright tests, with human approval before any change"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["mcp==2.3.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+playwright-fixer = "pwmcp.server:main"
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["pwmcp"]
+
+[tool.setuptools.package-data]
+pwmcp = ["*.js"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

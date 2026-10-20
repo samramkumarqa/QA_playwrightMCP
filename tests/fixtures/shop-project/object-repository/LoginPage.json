@@ -1,0 +1,36 @@
+{
+  "page": "LoginPage",
+  "url": "/index.html",
+  "elements": {
+    "practiceShopText": {
+      "strategy": "text",
+      "value": "Practice Shop",
+      "kind": "text",
+      "description": "Text \"Practice Shop\""
+    },
+    "usernameInput": {
+      "strategy": "testId",
+      "value": "username",
+      "kind": "input",
+      "description": "Input \"Username\""
+    },
+    "passwordInput": {
+      "strategy": "testId",
+      "value": "password",
+      "kind": "input",
+      "description": "Input \"Password\""
+    },
+    "errorText": {
+      "strategy": "testId",
+      "value": "error",
+      "kind": "text",
+      "description": "Text \"error\""
+    },
+    "loginButton": {
+      "strategy": "testId",
+      "value": "login-button",
+      "kind": "button",
+      "description": "Button \"Login\""
+    }
+  }
+}

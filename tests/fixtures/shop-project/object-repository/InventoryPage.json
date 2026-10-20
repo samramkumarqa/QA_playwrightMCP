@@ -1,0 +1,60 @@
+{
+  "page": "InventoryPage",
+  "url": "/inventory.html",
+  "elements": {
+    "trailBackpackLink": {
+      "strategy": "css",
+      "value": "#item_1_title_link",
+      "kind": "link",
+      "description": "Link \"Trail Backpack\""
+    },
+    "inventoryItemPriceText": {
+      "strategy": "text",
+      "value": "$29.99",
+      "kind": "text",
+      "description": "Text \"$29.99\""
+    },
+    "addToCartBackpackButton": {
+      "strategy": "testId",
+      "value": "add-to-cart-backpack",
+      "kind": "button",
+      "description": "Button \"Add to cart\""
+    },
+    "bikeLightLink": {
+      "strategy": "css",
+      "value": "#item_2_title_link",
+      "kind": "link",
+      "description": "Link \"Bike Light\""
+    },
+    "inventoryItemPriceText2": {
+      "strategy": "text",
+      "value": "$9.99",
+      "kind": "text",
+      "description": "Text \"$9.99\""
+    },
+    "addToCartBikeLightButton": {
+      "strategy": "testId",
+      "value": "add-to-cart-bike-light",
+      "kind": "button",
+      "description": "Button \"Add to cart\""
+    },
+    "boltTShirtLink": {
+      "strategy": "css",
+      "value": "#item_3_title_link",
+      "kind": "link",
+      "description": "Link \"Bolt T-Shirt\""
+    },
+    "inventoryItemPriceText3": {
+      "strategy": "text",
+      "value": "$15.99",
+      "kind": "text",
+      "description": "Text \"$15.99\""
+    },
+    "addToCartBoltTshirtButton": {
+      "strategy": "testId",
+      "value": "add-to-cart-bolt-tshirt",
+      "kind": "button",
+      "description": "Button \"Add to cart\""
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "page": "CommonPage",
+  "url": "",
+  "elements": {
+    "openMenuButton": {
+      "strategy": "testId",
+      "value": "open-menu",
+      "kind": "button",
+      "description": "Button \"Open Menu\""
+    },
+    "shoppingCartLink": {
+      "strategy": "testId",
+      "value": "shopping-cart-link",
+      "kind": "button",
+      "description": "Button \"Cart\""
+    },
+    "shoppingCartBadgeText": {
+      "strategy": "testId",
+      "value": "shopping-cart-badge",
+      "kind": "text",
+      "description": "Text \"0\""
+    },
+    "inventorySidebarLink": {
+      "strategy": "testId",
+      "value": "inventory-sidebar-link",
+      "kind": "button",
+      "description": "Button \"All Items\""
+    },
+    "ordersSidebarLink": {
+      "strategy": "testId",
+      "value": "orders-sidebar-link",
+      "kind": "button",
+      "description": "Button \"Orders\""
+    },
+    "logoutSidebarLink": {
+      "strategy": "testId",
+      "value": "logout-sidebar-link",
+      "kind": "button",
+      "description": "Button \"Logout\""
+    },
+    "resetSidebarLink": {
+      "strategy": "testId",
+      "value": "reset-sidebar-link",
+      "kind": "button",
+      "description": "Button \"Reset App State\""
+    },
+    "titleText": {
+      "strategy": "testId",
+      "value": "title",
+      "kind": "text",
+      "description": "Text \"Products\""
+    }
+  }
+}

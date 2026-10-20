@@ -1,0 +1,30 @@
+{
+  "page": "ItemPage",
+  "url": "/item.html",
+  "elements": {
+    "backToProductsButton": {
+      "strategy": "testId",
+      "value": "back-to-products",
+      "kind": "button",
+      "description": "Button \"Back to products\""
+    },
+    "inventoryItemNameText": {
+      "strategy": "testId",
+      "value": "inventory-item-name",
+      "kind": "text",
+      "description": "Text \"Trail Backpack\""
+    },
+    "inventoryItemPriceText": {
+      "strategy": "testId",
+      "value": "inventory-item-price",
+      "kind": "text",
+      "description": "Text \"$29.99\""
+    },
+    "addToCartBackpackButton": {
+      "strategy": "testId",
+      "value": "add-to-cart-backpack",
+      "kind": "button",
+      "description": "Button \"Add to cart\""
+    }
+  }
+}

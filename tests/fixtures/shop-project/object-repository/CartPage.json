@@ -1,0 +1,18 @@
+{
+  "page": "CartPage",
+  "url": "/cart.html",
+  "elements": {
+    "continueShoppingButton": {
+      "strategy": "testId",
+      "value": "continue-shopping",
+      "kind": "button",
+      "description": "Button \"Continue Shopping\""
+    },
+    "checkoutButton": {
+      "strategy": "testId",
+      "value": "checkout",
+      "kind": "button",
+      "description": "Button \"Checkout\""
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "page": "CheckoutStepOnePage",
+  "url": "/checkout-step-one.html",
+  "elements": {
+    "firstNameInput": {
+      "strategy": "testId",
+      "value": "firstName",
+      "kind": "input",
+      "description": "Input \"First Name\""
+    },
+    "lastNameInput": {
+      "strategy": "testId",
+      "value": "lastName",
+      "kind": "input",
+      "description": "Input \"Last Name\""
+    },
+    "postalCodeInput": {
+      "strategy": "testId",
+      "value": "postalCode",
+      "kind": "input",
+      "description": "Input \"Zip/Postal Code\""
+    },
+    "errorText": {
+      "strategy": "testId",
+      "value": "error",
+      "kind": "text",
+      "description": "Text \"error\""
+    },
+    "cancelButton": {
+      "strategy": "testId",
+      "value": "cancel",
+      "kind": "button",
+      "description": "Button \"Cancel\""
+    },
+    "continueButton": {
+      "strategy": "testId",
+      "value": "continue",
+      "kind": "button",
+      "description": "Button \"Continue\""
+    }
+  }
+}

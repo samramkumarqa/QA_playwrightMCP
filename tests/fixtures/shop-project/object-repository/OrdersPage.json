@@ -1,0 +1,12 @@
+{
+  "page": "OrdersPage",
+  "url": "/orders.html",
+  "elements": {
+    "ordersEmptyText": {
+      "strategy": "testId",
+      "value": "orders-empty",
+      "kind": "text",
+      "description": "Text \"No orders yet\""
+    }
+  }
+}
